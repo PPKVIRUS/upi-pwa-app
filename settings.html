@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Settings</title>
-  <script src="settings.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Manage UPI IDs</h2>
-  <input type="text" id="upiName" placeholder="Name">
-  <input type="text" id="upiId" placeholder="UPI ID">
-  <button onclick="addUPI()">Add UPI</button>
-  <h3>Saved Accounts</h3>
-  <ul id="upiList"></ul>
+  <div class="card">
+    <h1>Settings</h1>
+    <label>Enter your UPI ID</label>
+    <input type="text" id="upi-input" placeholder="example@bank">
+    <button id="save-btn" onclick="saveUPI()">Save</button>
+  </div>
+
+  <script src="settings.js"></script>
 </body>
 </html>

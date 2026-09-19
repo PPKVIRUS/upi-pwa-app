@@ -3,40 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPI QR PWA</title>
+  <title>Soundbox QR</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#007bff">
 </head>
 <body>
-  <!-- Amount Display -->
-  <div id="amount-display">0</div>
-
-  <!-- Numeric Keypad -->
-  <div class="keypad">
-    <button onclick="pressKey('1')">1</button>
-    <button onclick="pressKey('2')">2</button>
-    <button onclick="pressKey('3')">3</button>
-    <button onclick="pressKey('4')">4</button>
-    <button onclick="pressKey('5')">5</button>
-    <button onclick="pressKey('6')">6</button>
-    <button onclick="pressKey('7')">7</button>
-    <button onclick="pressKey('8')">8</button>
-    <button onclick="pressKey('9')">9</button>
-    <button onclick="pressKey('0')">0</button>
+  <div class="card">
+    <h1>Soundbox QR <span onclick="openSettings()">⚙️</span></h1>
+    <label>ENTER BILL AMOUNT</label>
+    <input type="number" id="amount-input" placeholder="₹ 0">
+    <button id="generate-btn" onclick="generateQR()">GENERATE QR</button>
+    <div id="qr-code"></div>
+    <div class="amount-display" id="amount-display"></div>
   </div>
 
-  <!-- Action Buttons -->
-  <button id="clear-btn" onclick="clearAmount()">Clear</button>
-  <button id="generate-btn" onclick="generateQR()">Generate QR</button>
-
-  <!-- Settings Button -->
-  <button id="settings-btn" onclick="openSettings()">⚙️ Settings</button>
-
-  <!-- QR Code Area -->
-  <div id="qr-code"></div>
-
-  <!-- Scripts -->
   <script src="app.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
