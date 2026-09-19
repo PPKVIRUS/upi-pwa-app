@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>UPI QR Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soundbox QR</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-  <script src="app.js"></script>
-  <style>
-    #amountDisplay { font-size: 64px; text-align: center; margin: 20px; }
-    .keypad button { font-size: 36px; width: 90px; height: 90px; margin: 8px; }
-    #qrcode { margin-top: 20px; text-align: center; }
-    #settingsLink { position: absolute; top: 10px; right: 10px; font-size: 24px; }
-  </style>
+  <meta name="theme-color" content="#007bff">
 </head>
 <body>
-  <a id="settingsLink" href="settings.html">⚙️</a>
-  <div id="amountDisplay">0</div>
-  <div class="keypad">
-    <button onclick="addDigit(1)">1</button>
-    <button onclick="addDigit(2)">2</button>
-    <button onclick="addDigit(3)">3</button><br>
-    <button onclick="addDigit(4)">4</button>
-    <button onclick="addDigit(5)">5</button>
-    <button onclick="addDigit(6)">6</button><br>
-    <button onclick="addDigit(7)">7</button>
-    <button onclick="addDigit(8)">8</button>
-    <button onclick="addDigit(9)">9</button><br>
-    <button onclick="clearAmount()">Clear</button>
-    <button onclick="addDigit(0)">0</button>
-    <button onclick="generateQR()">QR</button>
+  <div class="card">
+    <h1>Soundbox QR <span onclick="openSettings()">⚙️</span></h1>
+    <label>ENTER BILL AMOUNT</label>
+    <input type="number" id="amount-input" placeholder="₹ 0">
+    <button id="generate-btn" onclick="generateQR()">GENERATE QR</button>
+    <div id="qr-code"></div>
+    <div class="amount-display" id="amount-display"></div>
   </div>
-  <div id="qrcode"></div>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registered"))
+        .catch(err => console.error("SW registration failed:", err));
+    }
+  </script>
 </body>
 </html>
