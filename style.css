@@ -1,0 +1,70 @@
+/* General layout */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+/* Amount display */
+#amount-display {
+  font-size: 2.5em;       /* Large font for clarity */
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #fff;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Numeric keypad grid */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.keypad button {
+  font-size: 1.8em;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.keypad button:hover {
+  background: #0056b3;
+}
+
+/* Action buttons */
+#clear-btn, #generate-btn {
+  margin-top: 20px;
+  font-size: 1.2em;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#clear-btn {
+  background: #dc3545;
+  color: white;
+}
+
+#generate-btn {
+  background: #28a745;
+  color: white;
+}
+
+/* QR code area */
+#qr-code {
+  margin-top: 30px;
+}
